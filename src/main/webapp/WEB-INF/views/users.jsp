@@ -15,26 +15,25 @@
 </head>
 <body>
 
-<a href="<c:url value='/reg'/>">Регистрация</a>
-<br>
-<a href="<c:url value='/users'/>">Список пользователей</a>
-
+<a href="<c:url value='/index'/>">На главную</a>
 
 <div class="container mt-3">
     <div class="row">
-        <h4>Форум job4j</h4>
+        <h4>Пользователи</h4>
     </div>
     <div class="row">
         <table class="table">
             <thead>
             <tr>
-                <th scope="col">Тема</th>
+                <th scope="col">User</th>
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${posts}" var="post">
+            <c:forEach items="${users}" var="users">
                 <tr>
-                    <td><c:out value="${post.name}"/></td>
+                    <td><c:out value="${users.name}"/></td>
+                    <td><c:out value="${users.surename}"/></td>
+                    <td><c:out value="${users.email}"/></td>
                 </tr>
             </c:forEach>
             </tbody>
