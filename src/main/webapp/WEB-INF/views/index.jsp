@@ -17,7 +17,11 @@
 
 <a href="<c:url value='/reg'/>">Регистрация</a>
 <br>
+<a href="<c:url value='/logout'/>">Выйти</a>
+<br>
 <a href="<c:url value='/users'/>">Список пользователей</a>
+<br>
+<a href="<c:url value='/create'/>">Создать тему</a>
 
 
 <div class="container mt-3">
@@ -33,8 +37,20 @@
             </thead>
             <tbody>
             <c:forEach items="${posts}" var="post">
+
+                <%--        это ссылка под каждую запись--%>
+                <c:url var="updateButton" value="/update">
+                    <c:param name="id" value="${post.id}"/>
+                </c:url>
+
                 <tr>
                     <td><c:out value="${post.name}"/></td>
+
+                    <td>
+                        <input type="button" value="Обновить тему"
+                               onclick="window.location.href = '${updateButton}'"/>
+                    </td>
+
                 </tr>
             </c:forEach>
             </tbody>
