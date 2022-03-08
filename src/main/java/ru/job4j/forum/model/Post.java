@@ -31,7 +31,7 @@ public class Post {
 
     public Post(String name) {
         this.name = name;
-        this.created = LocalDateTime.now();
+//        this.created = LocalDateTime.now();
     }
 
     @Override
