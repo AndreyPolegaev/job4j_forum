@@ -26,7 +26,7 @@ public class RegControl {
     @PostMapping("/reg")
     public String regSave(@ModelAttribute User user, Model model) {
         User checkUser = users.getUserByUsername(user.getUsername());
-        if (checkUser != null && encoder.matches(user.getPassword(), checkUser.getPassword())) {
+        if (checkUser != null) {
             model.addAttribute("errorMessage", "such user is already presents please change name or password");
             return "reg";
         }
